@@ -6,8 +6,8 @@
     // temp 0-18: kachel normale stand
     // temp > 18: kachel uit
 
-    // Temperatuurwaarde instellen
-    $Kachel = 0; // Pas dit aan met de werkelijke temperatuur
+    // Initialisatie
+    $Kachel = -11; // Pas dit aan met de werkelijke temperatuur
 
     if ($Kachel >= -10 && $Kachel <= 0) {
         echo "Hoge stand.";
