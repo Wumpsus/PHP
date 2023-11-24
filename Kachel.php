@@ -6,14 +6,16 @@
     // temp 0-18: kachel normale stand
     // temp > 18: kachel uit
 
-    // Initialisatie
-    $kachel = 0;
+    // Temperatuurwaarde instellen
+    $Kachel = 0; // Pas dit aan met de werkelijke temperatuur
 
-    if ($kachel >= -10 && $kachel <= 0) {
+    if ($Kachel >= -10 && $Kachel <= 0) {
         echo "Hoge stand.";
-    } elseif ($kachel > 0 && $kachel <= 18) {
+    } elseif ($Kachel > 0 && $Kachel <= 18) {
         echo "Normale stand.";
-    } else {
+    } elseif ($Kachel > 18) {
         echo "Kachel uit.";
+    } else {
+        echo "Ongeldige temperatuur.";
     }
 ?>
