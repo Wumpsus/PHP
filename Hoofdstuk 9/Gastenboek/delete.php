@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"]  == "GET") {
 include "connect.php";
 
 //maak een query
-$sql = "DELETE FROM gasten WHERE ID = :ID";
+$sql = "DELETE FROM gastenboekberichten WHERE ID = :ID";
 //prepare  query
 $query = $conn->prepare($sql);
 //uitvoeren
