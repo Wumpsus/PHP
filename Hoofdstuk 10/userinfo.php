@@ -53,6 +53,6 @@ $browser = getBrowserInfo($userAgent);
 $os = getOSInfo($userAgent);
 
 // Browser en besturyingssysteem weergeven
-echo "User Agent: $userAgent\n<br>";
-echo "Internet Browser: $browser\n<br>";
-echo "Besturingssysteem: $os\n";
+echo "User Agent:<br> <p>$userAgent\n</p><br>";
+echo "Internet Browser:<br> <p>$browser\n</p><br>";
+echo "Besturingssysteem:<br> <p>$os\n</p>";
