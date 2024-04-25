@@ -1,0 +1,39 @@
+html {
+    background-size: cover; /* Zorgt ervoor dat de achtergrond op de hele pagina komt */
+    background-repeat: no-repeat; /* Zodat het maar 1 foto is */
+}
+
+body {
+    /* Zorgt ervoor dat de text in het midden komt, en de kleur wit blijft */
+    text-align: center;  
+    color: white;
+}
+table {
+    margin: 0 auto; /* Hiermee wordt de tabel in het midden van de pagina geplaatst */
+    border-collapse: collapse; /* Om dubbele randen tussen cellen te voorkomen */
+}   
+
+th, td {
+    /* Uitlijning van tabel */
+    border: 1px solid black;
+    text-align: center;
+}
+
+th {
+    background-color: grey;
+}
+
+label {
+    display: inline-block;
+    width: 10%;
+}
+
+input[type="text"] {
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparante witte achtergrond */
+    border: none; /* Geen rand rond de tekstvakken */
+    padding: 8px; /* Ruimte binnen de tekstvakken */
+    margin-bottom: 10px; /* Ruimte onder de tekstvakken */
+    width: 100%; /* Breedte van de tekstvakken */
+    box-sizing: border-box; /* Inclusief padding en rand in de breedte */
+    border-radius: 5px; /* Afgeronde hoeken voor de tekstvakken */
+}
