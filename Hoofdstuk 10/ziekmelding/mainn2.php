@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="css.css">
 </head>
 <body>
+    <h1>Dit is de Leerling pagina</h1>
     <a href="mainn2.php">Leerling pagina</a>
     <br>
     <a href="mainn.php">Admin pagina</a> 
