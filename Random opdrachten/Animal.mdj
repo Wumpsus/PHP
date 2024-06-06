@@ -1,0 +1,80 @@
+{
+    "_type": "Project",
+    "_id": "project",
+    "name": "Animal Class Diagram",
+    "ownedElements": [
+        {
+            "_type": "UMLModel",
+            "_id": "model",
+            "name": "Model",
+            "ownedElements": [
+                {
+                    "_type": "UMLPackage",
+                    "_id": "package",
+                    "name": "AnimalPackage",
+                    "ownedElements": [
+                        {
+                            "_type": "UMLClassDiagram",
+                            "_id": "classDiagram",
+                            "name": "Class Diagram",
+                            "ownedElements": [
+                                {
+                                    "_type": "UMLClass",
+                                    "_id": "animalClass",
+                                    "name": "Animal",
+                                    "attributes": [
+                                        {
+                                            "_type": "UMLAttribute",
+                                            "_id": "attr1",
+                                            "name": "naam",
+                                            "type": {
+                                                "$ref": "string"
+                                            },
+                                            "visibility": "private"
+                                        }
+                                    ],
+                                    "operations": [
+                                        {
+                                            "_type": "UMLOperation",
+                                            "_id": "op1",
+                                            "name": "__construct",
+                                            "parameters": [
+                                                {
+                                                    "_type": "UMLParameter",
+                                                    "_id": "param1",
+                                                    "name": "naam",
+                                                    "type": {
+                                                        "$ref": "string"
+                                                    }
+                                                }
+                                            ],
+                                            "visibility": "public"
+                                        },
+                                        {
+                                            "_type": "UMLOperation",
+                                            "_id": "op2",
+                                            "name": "Info",
+                                            "visibility": "public"
+                                        },
+                                        {
+                                            "_type": "UMLOperation",
+                                            "_id": "op3",
+                                            "name": "Eat",
+                                            "visibility": "public"
+                                        },
+                                        {
+                                            "_type": "UMLOperation",
+                                            "_id": "op4",
+                                            "name": "Sleep",
+                                            "visibility": "public"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
