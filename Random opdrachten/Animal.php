@@ -22,10 +22,10 @@ class Animal {
     }
 }
 
-// Maak een Animal object aan
+// Het dier
 $dier = new Animal("Olifant");
 
-// Roep de methodes aan
+// Info, Eat en Sleep
 $dier->Info();
 echo "<br>";
 $dier->Eat();
