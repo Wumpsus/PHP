@@ -8,7 +8,7 @@ class Huis {
     private float $volume;
     private const PRIJS_PER_M3 = 1500;
 
-    // Constructie van alles
+// Constructie van  
     public function __construct(int $aantalVerdiepingen, int $aantalKamers, float $breedte, float $hoogte, float $diepte) {
         $this->aantalVerdiepingen = $aantalVerdiepingen;
         $this->aantalKamers = $aantalKamers;

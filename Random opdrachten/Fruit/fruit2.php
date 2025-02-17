@@ -1,22 +1,30 @@
 <?php
 
-//* Functie: beschrijving opject - class Fruit
+//* Functie: beschrijving object - class Fruit
 //* Auteur: Michael Davelaar
 
 //* Definitie class
 class Fruit {
 
     // PROPERTIES
-    public $naam;
-    private $prijs;
-    // Methods
+    public $Name;
+    private $Price;
 
-    public function PrintNaam(){
-
+    // Constructor met parameter
+    public function __construct($Name, $prijs)
+    {
+        echo "Object Fruit wordt aangemaakt<br>";
+        $this->Name = $Name;
     }
-    // Method om de prijs in te stellen
-    public function setPrijs($prijs){
-        $this->prijs = $prijs;
+
+    // Methode om de prijs in te stellen
+    public function setPrice($prijs){
+        $this->Price = $prijs;
+    }
+
+    // Methode om de prijs op te vragen
+    public function getPrice(){
+        return $this->Price;
     }
 }
 
