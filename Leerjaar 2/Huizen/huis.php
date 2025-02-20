@@ -1,52 +1,61 @@
 <?php
-class Huis {
-    private int $aantalVerdiepingen;
-    private int $aantalKamers;
+class Kamer {
+    private float $lengte;
     private float $breedte;
     private float $hoogte;
-    private float $diepte;
-    private float $volume;
-    private const PRIJS_PER_M3 = 1500;
 
-// Constructie van  
-    public function __construct(int $aantalVerdiepingen, int $aantalKamers, float $breedte, float $hoogte, float $diepte) {
-        $this->aantalVerdiepingen = $aantalVerdiepingen;
-        $this->aantalKamers = $aantalKamers;
+    public function __construct(float $lengte, float $breedte, float $hoogte) {
+        $this->lengte = $lengte;
         $this->breedte = $breedte;
         $this->hoogte = $hoogte;
-        $this->diepte = $diepte;
-        $this->berekenVolume();
     }
 
-    // Method voor volume berekenen
-    private function berekenVolume(): void {
-        $this->volume = $this->breedte * $this->hoogte * $this->diepte;
+    public function getVolume(): float {
+        return $this->lengte * $this->breedte * $this->hoogte;
     }
 
-    // Method voor prijs berekenen
-    public function berekenPrijs(): float {
-        return $this->volume * self::PRIJS_PER_M3;
-    }
-
-    // Method om alle details te laten zien
-    public function toonDetails(): void {
-        echo "Huis details:\n";
-        echo "Aantal verdiepingen: {$this->aantalVerdiepingen}\n";
-        echo "Aantal kamers: {$this->aantalKamers}\n";
-        echo "Afmetingen: {$this->breedte}m x {$this->hoogte}m x {$this->diepte}m\n";
-        echo "Volume: {$this->volume} m³\n";
-        echo "Prijs: €" . number_format($this->berekenPrijs(), 2, ',', '.') . "\n";
-        echo "<br>-----------------------------\n";
-        echo "<br>";
+    public function getDetails(): string {
+        return "Lengte: {$this->lengte}m Breedte: {$this->breedte}m Hoogte: {$this->hoogte}m";
     }
 }
 
-// 3 huizen maken met verschillende verdiepingen, kamers en breedte
-$huis1 = new Huis(2, 5, 10.5, 6.0, 8.2);
-$huis2 = new Huis(3, 8, 12.0, 7.5, 10.0);
-$huis3 = new Huis(1, 3, 8.0, 4.5, 6.5);
+class Huis {
+    private array $kamers = [];
+    private const PRIJS_PER_M3 = 3000;
 
-// Alle details printen van elk huis
-$huis1->toonDetails();
-$huis2->toonDetails();
-$huis3->toonDetails();
+    public function addKamer(Kamer $kamer): void {
+        $this->kamers[] = $kamer;
+    }
+
+    public function getTotaalVolume(): float {
+        $totaalVolume = 0;
+        foreach ($this->kamers as $kamer) {
+            $totaalVolume += $kamer->getVolume();
+        }
+        return $totaalVolume;
+    }
+
+    public function berekenPrijs(): float {
+        return $this->getTotaalVolume() * self::PRIJS_PER_M3;
+    }
+
+    public function toonDetails(): void {
+        echo "<h2>Inhoud Kamers:</h2><ul>";
+        foreach ($this->kamers as $kamer) {
+            echo "<li>" . $kamer->getDetails() . "</li>";
+        }
+        echo "</ul>";
+        echo "<p><strong>Volume Totaal = " . $this->getTotaalVolume() . "m3</strong></p>";
+        echo "<p><strong>Prijs van het huis is= " . number_format($this->berekenPrijs(), 2, ',', '.') . " Euro</strong></p>";
+    }
+}
+
+// Huis aanmaken
+$huis = new Huis();
+$huis->addKamer(new Kamer(5.2, 5.1, 5.5));
+$huis->addKamer(new Kamer(4.8, 4.6, 4.9));
+$huis->addKamer(new Kamer(5.9, 2.5, 3.1));
+
+// Details tonen
+$huis->toonDetails();
+?>
