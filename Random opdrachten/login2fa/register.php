@@ -4,7 +4,7 @@
 session_start();
 
 // Database verbinding
-$dsn = "mysql:host=localhot;dbname=2fabarry";
+$dsn = "mysql:host=localhost;dbname=2fabarry";
 $user = "root";
 $pass = "";
 
@@ -16,7 +16,7 @@ $options = [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
 include "GoogleAuthenticator.php";
 
 // Gebruik de GoogleAuthenticator class
-use PHPGansta\GoogleAuthenticator;
+use PHPGangsta\GoogleAuthenticator;
 
 // Hier wordt de secret key aangemaakt
 $ga = new GoogleAuthenticator();
@@ -24,11 +24,11 @@ $qrCodeUrl = "";
 $secret = "";
 
 // Maak een if die kijkt of de request method een POST is.
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // De variabele $username haalt de waarde op van de post variabele username.
-    $username = $POST["username"];
+    $username = $_POST["username"];
     // Maak password_has om het wachtwoord te hashen
-    $password = password_hash(password $POST["password"], algo: PASSWORD_DEFAULT);
+    $password = password_hash( $_POST["password"],  PASSWORD_DEFAULT);
     $secret = $ga->createSecret();
 
     // Verbind met de database

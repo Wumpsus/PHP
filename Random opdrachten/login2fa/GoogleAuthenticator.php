@@ -9,15 +9,10 @@
  *
  * @link http://www.phpgangsta.de/
  */
-/* dit stond er: 
-class PHPGangsta_GoogleAuthenticator
-*/
-// aangepast naar:
+namespace PHPGangsta;
+ class GoogleAuthenticator
 
-// een namespace is een soort container waar in je classes kan plaatsen
-namespace PHPGansta;
-
-class GoogleAuthenticator {
+{
     protected $_codeLength = 6;
 
     /**
