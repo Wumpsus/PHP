@@ -20,7 +20,7 @@
 	<br />
 	<?php
 
-    require_once 'classes/user.php';
+    // require_once 'classes/user.php';
 
     $user = new User();
 

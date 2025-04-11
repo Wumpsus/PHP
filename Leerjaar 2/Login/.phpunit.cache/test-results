@@ -1,0 +1,1 @@
+{"version":1,"defects":{"CalculatorTest::testAdd":8,"LoginTest::testPassword":5,"LoginTest::testValidateUser":7,"LoginTest::testRegisterUserSucces":7},"times":{"CalculatorTest::testAdd":0.019,"LoginTest::testPassword":0,"LoginTest::testValidateUser":0.005,"LoginTest::testRegisterUserSucces":0.067}}

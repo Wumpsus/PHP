@@ -16,7 +16,8 @@ if (!isset($_SESSION['user_id'])) {
 <body>
     <center>
         <h1></h1>Dashboard</h1>
-        <p>Welkom, <?php echo htmlspecialchars($_SESSION['username']); ?>!</p>
+        <p>Welkom, Gebruiker!</p>
+        <p>(Ik wou ervoor zorgen dat het de gebruikersnaam liet zien, maar werkte niet :()</p>
         <p><a href="logout.php">Uitloggen</a></p>
         <p><a href="register.php">Registreren</a></p>
         <p><a href="login.php">Login</a></p>
