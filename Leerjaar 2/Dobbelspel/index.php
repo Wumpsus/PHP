@@ -37,8 +37,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DobbelSpel</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1>DobbelSpel</h1>
     <form method="post">
         <select name="aantalSpelers">
             <option value="1">1 Speler</option>
@@ -51,10 +53,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <button type="submit" name="werp">Werp Dobbelstenen</button>
     </form>
 
-<?php
-$spel->toonSpelersWorpen();
-$spel->toonScores();
-?>
+    <div class="spel-output">
+    <?php
+    $spel->toonSpelersWorpen();
+    $spel->toonScores();
+    ?>
+    </div>
 
 </body>
 </html>
